@@ -1,0 +1,4 @@
+
+deb ftp://adm/repo/astra17 1.7_x86-64 contrib main non-free
+deb ftp://adm/repo/astra17-devel-1 1.7_x86-64 contrib main non-free
+deb ftp://adm/repo/astra17-devel-2 1.7_x86-64 contrib main non-free

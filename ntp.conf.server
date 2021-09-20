@@ -1,0 +1,13 @@
+pool ru.pool.ntp.org iburst
+server ntp2.vniiftri.ru iburst prefer
+pool 0.ubuntu.pool.ntp.org iburst
+pool 1.ubuntu.pool.ntp.org iburst
+server 127.127.1.0
+
+restrict default kod notrap nomodify nopeer noquery
+restrict 192.168.11.0 mask 255.255.255.0 nomodify notrap
+restrict 127.0.0.1
+restrict ::1
+
+restrict -4 default kod notrap nomodify nopeer noquery
+restrict -6 default kod notrap nomodify nopeer noquery
