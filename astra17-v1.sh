@@ -1,3 +1,8 @@
+# astra linux 1.7 + ceph14 + ansible
+#
+# конф для 3 нод + 1 админский
+# сеть везде настроена
+# диск с дистрибами подключен к adm
 
 sudo mount /dev/sdb1 /srv/ftp/iso/
 sudo mount /srv/ftp/iso/astra17.iso /srv/ftp/repo/astra17

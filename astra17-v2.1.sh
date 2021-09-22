@@ -23,6 +23,12 @@ deb ftp://adm/repo/astra17-devel-1 1.7_x86-64 contrib main non-free
 deb ftp://adm/repo/astra17-devel-2 1.7_x86-64 contrib main non-free
 EOF
 
+sed -i 's/deb cdrom/#deb cdrom/#g' /etc/apt/sources.list
+
+mcedit /etc/os-release
+
+
+
 # Создаем пользователя ceph-adm:
 sudo useradd  -m -c "ceph-adm" -s /bin/bash -p $(openssl passwd pa55w0rd) ceph-adm
 echo "ceph-adm ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ceph-adm
@@ -106,3 +112,9 @@ sudo ceph mgr services
 
 
 
+04EE7237B7D453EC
+deb http://deb.debian.org/debian buster main contrib non-free
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 04EE7237B7D453EC
+
+deb http://download.ceph.com/debian-nautilus buster main
