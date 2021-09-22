@@ -13,3 +13,55 @@ public_network: 192.168.11.0/24
 osd_scenario: lvm
 lvm_volumes:
 - data: /dev/sdb
+
+
+
+---
+grafana_server_group_name: grafana-server
+ceph_origin: repository
+ceph_repository: community
+ceph_stable_release: octopus
+generate_fsid: true
+monitor_address_block: 192.168.1.0/24
+journal_size: 5120 # OSD journal size in MB
+public_network: 192.168.1.0/24
+cluster_network: 192.168.1.0/24
+dashboard_enabled: True
+dashboard_protocol: https
+dashboard_port: 8443
+dashboard_admin_user: admin
+dashboard_admin_password: admin123
+dashboard_crt: ''
+dashboard_key: ''
+grafana_admin_user: admin
+grafana_admin_password: admin123
+
+
+
+ntp_service_enabled: true
+
+ceph_origin: repository
+ceph_repository: community
+ceph_stable: true
+ceph_mirror: http://download.ceph.com
+ceph_stable_key: https://download.ceph.com/keys/release.asc
+ceph_stable_release: luminous
+ceph_stable_repo: "{{ ceph_mirror }}/debian-{{ ceph_stable_release }}"
+
+
+ceph_origin: repository
+ceph_repository: community
+ceph_stable_release: nautilus
+monitor_interface: eth0
+journal_size: 5120
+#public_network: 0.0.0.0/0 - оставляем закоментированным
+cluster_network: 10.0.1.0/24 - указываем сеть для внутреннего трафика
+
+1
+2
+3
+4
+devices:
+  - /dev/sdb
+  - /dev/sdc
+  - /dev/sdd

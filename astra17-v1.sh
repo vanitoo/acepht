@@ -19,7 +19,7 @@ sudo sh -c "echo 'nameserver 8.8.8.8' sudo >> /etc/resolv.conf"
 sudo sh -c "echo 'deb http://ppa.launchpad.net/ansible/ansible/ubuntu focal main' > /etc/apt/sources.list.d/ansible.list"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
 
-sudo apt update; sudo apt install ansible git sshpass python-pip
+sudo apt update; sudo apt install ansible git sshpass python-pip -y
 
 
 ssh-keygen -b 4096 -t rsa -f /home/$(whoami)/.ssh/id_rsa -N ""
@@ -46,7 +46,6 @@ EOF
 
 
 git clone https://github.com/ceph/ceph-ansible
-cd ceph-ansible; git checkout stable-4.0
 sudo pip install -r requirements.txt
 
 

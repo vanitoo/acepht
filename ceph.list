@@ -1,1 +1,2 @@
-deb http://download.ceph.com/debian-nautilus buster main
+deb http://download.ceph.com/debian-nautilus stretch main
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key E84AC2C0460F3994

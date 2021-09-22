@@ -25,7 +25,17 @@ EOF
 
 sed -i 's/deb cdrom/#deb cdrom/#g' /etc/apt/sources.list
 
-mcedit /etc/os-release
+sudo tee /etc/os-release<<EOF
+PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
+NAME="Debian GNU/Linux"
+VERSION_ID="9"
+VERSION="9 (stretch)"
+VERSION_CODENAME=stretch
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+EOF
 
 
 

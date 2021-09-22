@@ -1,9 +1,9 @@
 # Ceph admin user for SSH and Sudo
 [all:vars]
-ansible_ssh_user=user
+ansible_ssh_user=ceph-adm
 ansible_become=true
 ansible_become_method=sudo
-ansible_become_user=user
+ansible_become_user=ceph-adm
 
 # Ceph Monitor Nodes
 [mons]
