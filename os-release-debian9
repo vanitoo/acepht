@@ -1,4 +1,4 @@
-sudo tee /etc/os-release<<EOF
+
 PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
 NAME="Debian GNU/Linux"
 VERSION_ID="9"
@@ -8,19 +8,10 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
-EOF
+
 
 sudo mcedit /etc/apt/sources.list
 deb http://deb.debian.org/debian stretch main contrib non-free
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key 04EE7237B7D453EC
 
 
-
-sudo tee /etc/hosts<<EOF
-127.0.0.1<----->localhost
-
-192.168.11.90  adm
-192.168.11.91  node1
-192.168.11.92  node2
-192.168.11.93  node3
-EOF
