@@ -123,8 +123,12 @@ ceph-deploy osd create --data /dev/sdb node3
 # установка даш борда, ставим дашборд на все ноды с MGR
 for node_id in $(cat ../remote-hosts); do ssh ceph-adm@$node_id 'sudo apt install ceph-mgr-dashboard -y'; done
 
+
+# логинимся на node1
 sudo ceph mgr module enable dashboard
 sudo ceph mgr module ls | grep dashboard
 sudo ceph dashboard create-self-signed-cert
 sudo ceph dashboard ac-user-create admin admin administrator
 sudo ceph mgr services
+
+# The END
