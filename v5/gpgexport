@@ -1,0 +1,8 @@
+#!/bin/bash
+ssh root@srv17   "bash -c \"gpg --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC; gpg --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138; gpg --export --armor 04EE7237B7D453EC | apt-key add -; gpg --export --armor 648ACFD622F3D138 | apt-key add -\""
+ssh root@node117 "bash -c \"gpg --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC; gpg --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138; gpg --export --armor 04EE7237B7D453EC | apt-key add -; gpg --export --armor 648ACFD622F3D138 | apt-key add -\""
+ssh root@node217 "bash -c \"gpg --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC; gpg --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138; gpg --export --armor 04EE7237B7D453EC | apt-key add -; gpg --export --armor 648ACFD622F3D138 | apt-key add -\""
+ssh root@node317 "bash -c \"gpg --keyserver keyserver.ubuntu.com --recv-keys 04EE7237B7D453EC; gpg --keyserver keyserver.ubuntu.com --recv-keys 648ACFD622F3D138; gpg --export --armor 04EE7237B7D453EC | apt-key add -; gpg --export --armor 648ACFD622F3D138 | apt-key add -\""
+
+
+

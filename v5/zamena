@@ -1,0 +1,37 @@
+#!/bin/bash
+scp ./debian_version root@node117:/etc
+scp ./debian_version root@node217:/etc
+scp ./debian_version root@node317:/etc
+scp ./debian_version root@srv17:/etc
+
+scp ./issue root@node117:/etc
+scp ./issue root@node217:/etc
+scp ./issue root@node317:/etc
+scp ./issue root@srv17:/etc
+
+scp ./issue.net root@node117:/etc
+scp ./issue.net root@node217:/etc
+scp ./issue.net root@node317:/etc
+scp ./issue.net root@srv17:/etc
+
+scp ./locale.alias root@node117:/etc
+scp ./locale.alias root@node217:/etc
+scp ./locale.alias root@node317:/etc
+scp ./locale.alias root@srv17:/etc
+
+scp ./profile root@node117:/etc
+scp ./profile root@node217:/etc
+scp ./profile root@node317:/etc
+scp ./profile root@srv17:/etc
+
+scp ./os-release root@node117:/usr/lib
+scp ./os-release root@node217:/usr/lib
+scp ./os-release root@node317:/usr/lib
+scp ./os-release root@srv17:/usr/lib
+
+
+
+ssh root@node117 "bash -c \"reboot\""
+ssh root@node217 "bash -c \"reboot\""
+ssh root@node317 "bash -c \"reboot\""
+ssh root@srv17 "bash -c \"reboot\""

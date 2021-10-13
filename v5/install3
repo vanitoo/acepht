@@ -1,0 +1,23 @@
+#!/bin/bash
+scp ./sources.list2 root@srv17:/etc/apt/sources.list
+scp ./sources.list2 root@node117:/etc/apt/sources.list
+scp ./sources.list2 root@node217:/etc/apt/sources.list
+scp ./sources.list2 root@node317:/etc/apt/sources.list
+
+sleep 3
+
+ssh root@srv17 "bash -c \"apt update\""
+ssh root@node117 "bash -c \"apt update\""
+ssh root@node217 "bash -c \"apt update\""
+ssh root@node317 "bash -c \"apt update\""
+
+#sleep 3
+
+#ssh root@srv17 "bash -c \"apt install ceph-mgr-diskprediction-local -y; sleep 3; apt install ceph-mgr-dashboard -y; sleep 3; apt install python-routes -y; sleep 3\""
+#ssh root@node117 "bash -c \"apt install ceph-mgr-diskprediction-local -y; sleep 3\""
+#ssh root@node217 "bash -c \"apt install ceph-mgr-diskprediction-local -y; sleep 3\""
+#ssh root@node317 "bash -c \"apt install ceph-mgr-diskprediction-local -y; sleep 3\""
+
+
+
+

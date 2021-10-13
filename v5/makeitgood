@@ -1,0 +1,9 @@
+#!/bin/bash
+./zamena
+./aptcdromadd
+./install
+./ln
+./gpgexport
+./install2
+./cephansible
+#./install3

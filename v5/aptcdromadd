@@ -1,0 +1,16 @@
+#!/bin/bash
+scp ./source.listbasic root@srv17:/etc/apt/sources.list
+scp ./source.listbasic root@node117:/etc/apt/sources.list
+scp ./source.listbasic root@node217:/etc/apt/sources.list
+scp ./source.listbasic root@node317:/etc/apt/sources.list
+
+ssh root@srv17 "bash -c \"apt-cdrom add\""
+ssh root@node117 "bash -c \"apt-cdrom add\""
+ssh root@node217 "bash -c \"apt-cdrom add\""
+ssh root@node317 "bash -c \"apt-cdrom add\""
+
+ssh root@srv17 "bash -c \"apt update\""
+ssh root@node117 "bash -c \"apt update\""
+ssh root@node217 "bash -c \"apt update\""
+ssh root@node317 "bash -c \"apt update\""
+

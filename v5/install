@@ -1,0 +1,7 @@
+#!/bin/bash
+ssh root@srv17 "bash -c \"apt install ca-certificates -y; sleep 3; apt install ansible -y; sleep 3; apt install -f; sleep 3; apt install ceph -y; sleep 3; apt install -f; sleep 3; apt install git -y; sleep 3; apt install python-pip -y; sleep 3; apt install -f; sleep 3; apt install python3-apt -y; sleep 3; apt install python-apt -y; sleep 3\""
+ssh root@node117 "bash -c \"apt install ca-certificates -y; sleep 3; apt install ceph -y; sleep 3; apt install -f; sleep 3; apt install python3-apt -y; sleep 3; apt install python-apt -y; sleep 3\""
+ssh root@node217 "bash -c \"apt install ca-certificates -y; sleep 3; apt install ceph -y; sleep 3; apt install -f; sleep 3; apt install python3-apt -y; sleep 3; apt install python-apt -y; sleep 3\""
+ssh root@node317 "bash -c \"apt install ca-certificates -y; sleep 3; apt install ceph -y; sleep 3; apt install -f; sleep 3; apt install python3-apt -y; sleep 3; apt install python-apt -y; sleep 3\""
+
+

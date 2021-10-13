@@ -1,7 +1,8 @@
-
+tee -a /etc/hosts<<EOF
 127.0.0.1      localhost
 
 192.168.11.90  adm
 192.168.11.91  node1
 192.168.11.92  node2
 192.168.11.93  node3
+EOF

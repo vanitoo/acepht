@@ -1,0 +1,7 @@
+#!/bin/bash
+ssh root@srv17 "bash -c \"cd /usr/lib/python3/dist-packages; ln -s apt_inst.cpython-37m-x86_64-linux-gnu.so apt_inst.so; ln -s apt_pkg.cpython-37m-x86_64-linux-gnu.so apt_pkg.so\""
+ssh root@node117 "bash -c \"cd /usr/lib/python3/dist-packages; ln -s apt_inst.cpython-37m-x86_64-linux-gnu.so apt_inst.so; ln -s apt_pkg.cpython-37m-x86_64-linux-gnu.so apt_pkg.so\""
+ssh root@node217 "bash -c \"cd /usr/lib/python3/dist-packages; ln -s apt_inst.cpython-37m-x86_64-linux-gnu.so apt_inst.so; ln -s apt_pkg.cpython-37m-x86_64-linux-gnu.so apt_pkg.so\""
+ssh root@node317 "bash -c \"cd /usr/lib/python3/dist-packages; ln -s apt_inst.cpython-37m-x86_64-linux-gnu.so apt_inst.so; ln -s apt_pkg.cpython-37m-x86_64-linux-gnu.so apt_pkg.so\""
+
+

@@ -1,0 +1,7 @@
+#!/bin/bash
+git clone https://github.com/ceph/ceph-ansible
+cd ./ceph-ansible
+git checkout stable-4.0
+pip install -r requirements.txt
+
+

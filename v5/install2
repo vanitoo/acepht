@@ -1,0 +1,22 @@
+#!/bin/bash
+scp ./sources.list root@srv17:/etc/apt
+scp ./sources.list root@node117:/etc/apt
+scp ./sources.list root@node217:/etc/apt
+scp ./sources.list root@node317:/etc/apt
+
+sleep 3
+
+ssh root@srv17 "bash -c \"apt update\""
+ssh root@node117 "bash -c \"apt update\""
+ssh root@node217 "bash -c \"apt update\""
+ssh root@node317 "bash -c \"apt update\""
+
+#sleep 3
+
+ssh root@srv17 "bash -c \"apt install software-properties-common -y; sleep 3\""
+ssh root@node117 "bash -c \"apt install software-properties-common -y; sleep 3\""
+ssh root@node217 "bash -c \"apt install software-properties-common -y; sleep 3\""
+ssh root@node317 "bash -c \"apt install software-properties-common -y; sleep 3\""
+
+
+

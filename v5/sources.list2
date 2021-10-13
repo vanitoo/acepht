@@ -1,0 +1,14 @@
+# deb cdrom:[OS Astra Linux 1.7.0 1.7_x86-64 DVD ]/ 1.7_x86-64 contrib main non-free
+# deb https://download.astralinux.ru/astra/stable/1.7_x86-64/repository/ 1.7_x86-64 main contrib non-free
+
+# deb cdrom:[OS Astra Linux 1.7.0 1.7_x86-64 DVD ]/ 1.7_x86-64 contrib main non-free
+# deb cdrom:[OS Astra Linux 1.7.0 1.7_x86-64 DVD ]/ 1.7_x86-64 contrib main non-free
+# deb cdrom:[OS Astra Linux 1.7.0 1.7_x86-64 devel-1 DVD]/ 1.7_x86-64 contrib main non-free
+# deb cdrom:[OS Astra Linux 1.7.0 1.7_x86-64 devel-2 DVD]/ 1.7_x86-64 contrib main non-free
+deb https://mirror.yandex.ru/debian/ buster main contrib non-free
+deb http://ftp.de.debian.org/debian sid main
+
+
+
+
+
