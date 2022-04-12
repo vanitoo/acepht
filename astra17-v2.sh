@@ -38,6 +38,7 @@ deb ftp://adm/repo/astra17-devel-1 1.7_x86-64 contrib main non-free
 deb ftp://adm/repo/astra17-devel-2 1.7_x86-64 contrib main non-free
 EOF
 
+
 sudo tee /etc/hosts<<EOF
 127.0.0.1      localhost
 
@@ -72,8 +73,9 @@ logchange 0.5
 logdir /var/log/chrony
 EOF
 
-sudo systemctl enable chronyd; sudo systemctl start chronyd
-
+sudo systemctl enable chronyd
+sudo systemctl start chronyd
+sudo systemctl restart chronyd
 
 
 
@@ -118,6 +120,7 @@ ssh $node_id 'sudo cp /tmp/chrony.conf.client /etc/chrony/chrony.conf';
 ssh $node_id 'sudo systemctl enable chronyd; sudo systemctl start chronyd';
 
 ssh $node_id 'sudo apt autoremove -y';
+ssh $node_id 'sudo systemctl restart chronyd';
 
 done
 
@@ -139,10 +142,10 @@ journal_size: 5120
 EOF
 
 # Устанавливаем дистрибутив Ceph на машины:
-##ceph-deploy install node1 node2 node3 
-ceph-deploy install --mon node1 node2 node3 
-ceph-deploy install --osd node1 node2 node3 
-ceph-deploy install --mgr node1 node2 node3 
+ceph-deploy install node1 node2 node3 
+#ceph-deploy install --mon node1 node2 node3 
+#ceph-deploy install --osd node1 node2 node3 
+#ceph-deploy install --mgr node1 node2 node3 
 
 
 # Создаем мониторы, указанные при создании кластера:
@@ -160,7 +163,7 @@ ceph-deploy mgr create node1 node2 node3
 
 
 #установить основные компоненты Ceph на административную рабочую станцию
-ceph-deploy install --cli node1 node2 node3
+##ceph-deploy install --cli node1 node2 node3
 # копировать конфигурационный файл
 ceph-deploy admin node1 node2 node3
 
@@ -175,7 +178,10 @@ ceph-deploy osd create --data /dev/sdb node3
 
 
 # установка даш борда, ставим дашборд на все ноды с MGR
-for node_id in $(cat ../remote-hosts); do ssh ceph-adm@$node_id 'sudo apt install ceph-mgr-dashboard -y'; done
+for node_id in $(cat remote-hosts);
+do
+  ssh ceph-adm@$node_id 'sudo apt install ceph-mgr-dashboard -y';
+done
 
 
 # логинимся на node1
@@ -185,11 +191,13 @@ sudo ceph dashboard create-self-signed-cert
 sudo ceph dashboard ac-user-create admin admin administrator
 sudo ceph mgr services
 
-for node_id in node1;
+
+for node_id in $(cat remote-hosts);
+#for node_id in node1;
 do
 ssh $node_id 'sudo ceph mgr module enable dashboard'
 ssh $node_id 'sudo ceph dashboard create-self-signed-cert'
-ssh $node_id 'sudo ceph dashboard ac-user-create admin admin administrator'
+ssh $node_id 'sudo ceph dashboard ac-user-create admin admin123 administrator'
 ssh $node_id 'sudo ceph mgr services'
 done
 
